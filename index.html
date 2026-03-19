@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bali Family Trip · June 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f5ede0;
+    --terracotta: #c4622d;
+    --terracotta-light: #e8895a;
+    --forest: #2d4a3e;
+    --forest-light: #4a7a66;
+    --gold: #c9a84c;
+    --cream: #faf6f0;
+    --ink: #1a1a1a;
+    --muted: #7a6e62;
+    --border: rgba(196, 98, 45, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--forest);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(196,98,45,0.2) 0%, transparent 50%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      45deg,
+      #fff 0px,
+      #fff 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 300;
+    color: var(--sand);
+    line-height: 1;
+    letter-spacing: -1px;
+    position: relative;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta-light);
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245,237,224,0.6);
+    margin-top: 12px;
+    position: relative;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    position: relative;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+  }
+
+  .hero-meta-item .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .hero-meta-item .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--sand);
+    font-weight: 300;
+  }
+
+  /* LEGEND */
+  .legend {
+    background: var(--forest);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(245,237,224,0.6);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* NOTICE BAR */
+  .notice-bar {
+    background: var(--terracotta);
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  .notice-bar strong { font-weight: 500; }
+
+  /* MAIN */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* PHASE HEADER */
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 48px 0 24px;
+  }
+
+  .phase-badge {
+    background: var(--forest);
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .phase-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--forest);
+  }
+
+  .phase-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* DAY CARD */
+  .day-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+
+  .day-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--sand);
+  }
+
+  .day-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--terracotta);
+    line-height: 1;
+    min-width: 52px;
+  }
+
+  .day-info {}
+
+  .day-date {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+
+  .day-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .day-location-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    background: rgba(74,122,102,0.1);
+    border: 1px solid rgba(74,122,102,0.2);
+    padding: 4px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    padding: 20px 24px;
+  }
+
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .timeline-row:not(:last-child) .timeline-content {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border);
+    margin-bottom: 20px;
+  }
+
+  .timeline-time {
+    padding-top: 2px;
+    text-align: right;
+  }
+
+  .time-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--muted);
+    display: block;
+  }
+
+  .time-type {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-top: 2px;
+    display: block;
+  }
+
+  .timeline-content {}
+
+  .event-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .event-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .event-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .tag-together {
+    background: rgba(201,168,76,0.12);
+    color: #8a6e20;
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+
+  .tag-split {
+    background: rgba(196,98,45,0.1);
+    color: var(--terracotta);
+    border: 1px solid rgba(196,98,45,0.2);
+  }
+
+  .tag-optional {
+    background: rgba(74,122,102,0.1);
+    color: var(--forest-light);
+    border: 1px solid rgba(74,122,102,0.2);
+  }
+
+  .tag-active {
+    background: rgba(45,74,62,0.08);
+    color: var(--forest);
+    border: 1px solid rgba(45,74,62,0.15);
+  }
+
+  .split-note {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: rgba(196,98,45,0.05);
+    border-left: 2px solid var(--terracotta-light);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .split-note p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .split-note p + p {
+    margin-top: 4px;
+  }
+
+  .split-note strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  .itinerary-footer {
+    margin-top: 56px;
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+  }
+
+  .footer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--forest);
+    margin-bottom: 16px;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .tip-card {
+    padding: 16px;
+    background: var(--sand);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  .tip-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .tip-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+
+  .tip-text {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero-meta { gap: 20px; }
+    .legend { padding: 14px 20px; gap: 16px; }
+    main { padding: 24px 16px 60px; }
+    .day-header { grid-template-columns: auto 1fr; }
+    .day-location-tag { display: none; }
+    .timeline { padding: 16px; }
+    .timeline-row { grid-template-columns: 76px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <p class="hero-eyebrow">Family Trip · 11 Pax</p>
+  <h1>Bali <em>Together</em></h1>
+  <p class="hero-sub">10 – 14 June 2025 &nbsp;·&nbsp; Ubud & Canggu</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="label">Duration</span>
+      <span class="value">5 Days</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Breakfast</span>
+      <span class="value">8:30 AM</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Pace</span>
+      <span class="value">Mixed</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Dinner</span>
+      <span class="value">Together</span>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#c9a84c"></div> All Together</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c4622d"></div> Split Groups</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#4a7a66"></div> Optional</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#2d4a3e"></div> Active / Adventure</div>
+</div>
+
+<div class="notice-bar">
+  <strong>Meals policy:</strong> Breakfast 8:30am & dinner are always together · Lunch is flexible · Groups may split for daytime activities
+</div>
+
+<main>
+
+  <!-- PHASE 1: UBUD -->
+  <div class="phase-header">
+    <div class="phase-badge">Phase 1</div>
+    <div class="phase-name">Ubud — Heart of Bali</div>
+    <div class="phase-line"></div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">1</div>
+      <div class="day-info">
+        <div class="day-date">Tuesday · 10 June</div>
+        <div class="day-title">Arrival & Sacred Monkey Forest</div>
+      </div>
+      <div class="day-location-tag">Ubud</div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">10:15 AM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">✈️ Depart Singapore — TR 288</div>
+          <div class="event-desc">Flight departs Singapore (SIN) at 10:15am. ~2h 50min flight to Bali.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">1:05 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Arrive Bali (DPS) & Transfer to Ubud</div>
+          <div class="event-desc">Clear immigration, collect luggage, and board chartered vans to Ubud. Transfer takes ~1.5 hrs — sit back and enjoy the first glimpses of Bali!</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">2:45 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Check-in & Freshen Up</div>
+          <div class="event-desc">Settle into the villa, drop bags, take a breather. Quick dip in the pool if the kids can't wait!</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">3:30 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Sacred Monkey Forest</div>
+          <div class="event-desc">Explore the ancient temple grounds and encounter the cheeky macaques. Easy, fun intro to Ubud. ~1 hr.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span><span class="tag tag-active">Active</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">4:45 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Ubud Royal Palace & Market</div>
+          <div class="event-desc">Wander the grand Puri Saren palace courtyard, then browse the nearby art market for Balinese crafts, textiles, and trinkets.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">6:30 PM</span>
+          <span class="time-type">Dinner</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Welcome Dinner — Ubud Town</div>
+          <div class="event-desc">First meal together in Bali! Try Naughty Nuri's ribs for a fun casual vibe, or Warung Babi Guling for an authentic Balinese feast.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">2</div>
+      <div class="day-info">
+        <div class="day-date">Wednesday · 11 June</div>
+        <div class="day-title">Adventure Day — Split Groups + Fireflies Night Tour</div>
+      </div>
+      <div class="day-location-tag">Ubud</div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">8:30 AM</span>
+          <span class="time-type">Breakfast</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Breakfast Together</div>
+          <div class="event-desc">Full family breakfast at the villa or nearby café before splitting for the day's adventures.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">9:30 AM</span>
+          <span class="time-type">Split</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Morning Adventures — Choose Your Group</div>
+          <div class="event-tags"><span class="tag tag-split">Split Groups</span><span class="tag tag-active">Active</span></div>
+          <div class="split-note">
+            <p><strong>Group A — Thrill Seekers (6 pax):</strong> ATV Quad Biking through rice fields & jungle trails (~2–3 hrs). Book with Mason Adventures or Bali ATV Ride.</p>
+            <p><strong>Group B — Water Lovers (6 pax):</strong> White Water Rafting on Ayung River (~2 hrs). Scenic jungle gorge with Grade 2–3 rapids — suitable for most ages.</p>
+            <p><em>Note: Some may join both if timing permits, or swap groups.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">1:00 PM</span>
+          <span class="time-type">Lunch</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Regrouped Lunch</div>
+          <div class="event-desc">Regroup over lunch at a riverside warung or back in Ubud town.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">2:30 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Free Afternoon — Rest & Explore</div>
+          <div class="event-desc">Pool time at the villa, optional Ubud town stroll, or spa treatments. Rest up — tonight is a late one!</div>
+          <div class="event-tags"><span class="tag tag-optional">Optional</span></div>
+          <div class="split-note">
+            <p><strong>Optional (3 pax):</strong> Yoga class in Ubud if interested. Many studios run afternoon sessions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">6:00 PM</span>
+          <span class="time-type">Dinner</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Early Dinner Together</div>
+          <div class="event-desc">Early dinner before the night tour. Keep it light and energising.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">7:30 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">🌟 Fireflies Night Tour <span style="font-size:13px;color:var(--muted)">(Top Voted!)</span></div>
+          <div class="event-desc">The group's #1 voted activity! A magical boat ride along the river to witness thousands of fireflies lighting up the mangroves. An unforgettable family memory. ~2 hrs.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">3</div>
+      <div class="day-info">
+        <div class="day-date">Thursday · 12 June</div>
+        <div class="day-title">Nature & Culture — Waterfall, Coffee & Teggaland</div>
+      </div>
+      <div class="day-location-tag">Ubud</div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">8:30 AM</span>
+          <span class="time-type">Breakfast</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Breakfast Together</div>
+          <div class="event-desc">Relaxed morning — refuel before a day out in nature.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">9:30 AM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Waterfall Walk & Coffee Plantation</div>
+          <div class="event-desc">#2 voted Ubud activity. Trek to a stunning waterfall (Tibumana or Kanto Lampo), then visit a Kopi Luwak coffee plantation for a tasting session. Kids will love the animals; adults will love the coffee.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span><span class="tag tag-active">Active</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">1:00 PM</span>
+          <span class="time-type">Lunch</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Lunch at Plantation or En Route</div>
+          <div class="event-desc">Many coffee plantation tours include a traditional lunch. Or head to a warung nearby.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">3:00 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Teggaland Rice Terrace Walk</div>
+          <div class="event-desc">A scenic, leisurely stroll through lush rice terraces. Gorgeous photo spots and a peaceful wind-down pace before heading back. ~1.5 hrs.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">6:00 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Transfer to Canggu</div>
+          <div class="event-desc">Pack up and check out. Scenic ~1.5 hr drive to Canggu villa. Arrive, settle in, and decompress.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">7:30 PM</span>
+          <span class="time-type">Dinner</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Welcome-to-Canggu Dinner</div>
+          <div class="event-desc">Dinner near the villa or at a beachside restaurant in Canggu. Try Crate Café, La Brisa, or FISH by Jose.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PHASE 2: CANGGU -->
+  <div class="phase-header">
+    <div class="phase-badge">Phase 2</div>
+    <div class="phase-name">Canggu — Sun, Surf & Shopping</div>
+    <div class="phase-line"></div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">4</div>
+      <div class="day-info">
+        <div class="day-date">Friday · 13 June</div>
+        <div class="day-title">Bali Zoo, Beach & Waterbom / Horse Riding</div>
+      </div>
+      <div class="day-location-tag">Canggu</div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">8:30 AM</span>
+          <span class="time-type">Breakfast</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Breakfast Together</div>
+          <div class="event-desc">Start the day together at the villa or a Canggu café.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">9:30 AM</span>
+          <span class="time-type">Split</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Morning — Split by Interest</div>
+          <div class="event-tags"><span class="tag tag-split">Split Groups</span></div>
+          <div class="split-note">
+            <p><strong>Group A — Families with kids:</strong> Bali Zoo (~3 hrs). Top-voted Canggu activity — incredible up-close animal encounters. Located in Gianyar, ~45 min drive.</p>
+            <p><strong>Group B — Beach & Surf crew:</strong> Head to Batu Bolong Beach. Learn Surfing lesson (2 pax keen) or relax at a beach club. Beach Volleyball on the sand (3 pax).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">1:00 PM</span>
+          <span class="time-type">Lunch</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Lunch — Flexible</div>
+          <div class="event-desc">Grab lunch near your morning activity location, then regroup for the afternoon.</div>
+          <div class="event-tags"><span class="tag tag-optional">Flexible</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">2:00 PM</span>
+          <span class="time-type">Split</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Afternoon — Waterbom Park or Horse Riding</div>
+          <div class="event-tags"><span class="tag tag-split">Split Groups</span><span class="tag tag-active">Active</span></div>
+          <div class="split-note">
+            <p><strong>Group A — Water park (5 pax):</strong> Waterbom Bali in Kuta — Asia's top-rated waterpark. Slides, lazy river, wave pool. Approx 3 hrs.</p>
+            <p><strong>Group B — Horse riding (5 pax):</strong> Sunset horse riding on Seminyak or Pererenan Beach. Magical golden hour experience. ~1.5 hrs.</p>
+            <p><strong>Not keen (4 pax):</strong> Chill at the villa pool 🏊</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">5:30 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Sunset at the Beach — Watch & Fly Kites</div>
+          <div class="event-desc">#3 voted activity. Gather together to watch the sunset at Batu Bolong or Pererenan Beach. Grab kites for the kids — a beautiful, breezy Bali moment.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">7:30 PM</span>
+          <span class="time-type">Dinner</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">BBQ Night at the Villa 🔥</div>
+          <div class="event-desc">#4 voted — BBQ dinner at the villa! Order in satays, fresh seafood, and corn. Relaxed evening, the kids can swim, everyone winds down together under the stars.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">5</div>
+      <div class="day-info">
+        <div class="day-date">Saturday · 14 June</div>
+        <div class="day-title">Shopping, Farewell Brunch & Departure</div>
+      </div>
+      <div class="day-location-tag">Canggu → Home</div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">8:30 AM</span>
+          <span class="time-type">Breakfast</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Final Breakfast Together</div>
+          <div class="event-desc">Leisurely last breakfast. Savour the final morning. Take the group photo!</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">10:00 AM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Seminyak / Kuta Shopping 🛍️</div>
+          <div class="event-desc">Top-voted Canggu activity (tied 23pts)! Hit the boutiques and malls — Seminyak Village, Beachwalk Mall, and the local textile & souvenir shops. Pick up last-minute gifts.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">1:00 PM</span>
+          <span class="time-type">Lunch</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Farewell Lunch</div>
+          <div class="event-desc">Last meal in Bali. Make it a good one! Try Sarong in Seminyak or Bambu Restaurant for a beautiful send-off lunch.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">2:30 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">✈️ Transfer to Airport</div>
+          <div class="event-desc">Head to Ngurah Rai International Airport (DPS). ~30–45 min from Seminyak. Aim to arrive by 3:30pm for TR 243 departing 5:35pm.</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-time">
+          <span class="time-label">5:35 PM</span>
+        </div>
+        <div class="timeline-content">
+          <div class="event-title">Depart Bali — TR 243</div>
+          <div class="event-desc">Flight departs Bali (DPS) at 5:35pm, arriving back in Singapore (SIN) at 8:25pm. See you on the other side! 🌴</div>
+          <div class="event-tags"><span class="tag tag-together">All Together</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER TIPS -->
+  <div class="itinerary-footer">
+    <div class="footer-title">Planning Notes</div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🌋</div>
+        <div class="tip-title">Mt Batur Sunrise</div>
+        <div class="tip-text">4 pax voted for this but 6 preferred to chill. If the keen ones are up for a 3am jeep start on Day 2, it can be an optional add-on — they can rejoin for 8:30am breakfast!</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🌅</div>
+        <div class="tip-title">Uluwatu + Kecak Dance</div>
+        <div class="tip-text">4 pax voted for this but with a 5:35pm departure on Day 5, it won't fit. Consider adding it as an evening activity on Day 4 instead of the BBQ — or make the BBQ an earlier dinner!</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📸</div>
+        <div class="tip-title">Family Photographer</div>
+        <div class="tip-text">Only 1pt but worth flagging — consider a 2-hr villa session on Day 4 evening after BBQ, or sunset shoot at the beach. A small group sub-cost makes it very affordable.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🍳</div>
+        <div class="tip-title">Balinese Cooking Class</div>
+        <div class="tip-text">Also 1pt. Could replace one Day 3 afternoon activity if interest picks up. Many classes include a morning market visit — pairs beautifully with a relaxed Day 3 pace.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
